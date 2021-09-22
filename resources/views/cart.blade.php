@@ -4,7 +4,7 @@
 <div class="card">
     <div class="card-header">
         <h6 class="card-title">
-            Product in Cart
+            PRODUCTS IN CART
         </h6>
     </div>
     <div class="card-body">
@@ -50,7 +50,7 @@
                 </tr>
                 <tr>
                     <td colspan="5" class="text-right">
-                        <a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> More Shopping</a>
+                        <a href="{{ url('/') }}" class="btn btn-secondary"><i class="fa fa-angle-left"></i> More Shopping</a>
                         <button class="btn btn-success" onclick="checkout()">Checkout</button>
                     </td>
                 </tr>

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\backend\DashboardController;
+use App\Http\Controllers\backend\ProductsController;
+use App\Http\Controllers\backend\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +17,14 @@ use App\Http\Controllers\backend\DashboardController;
 |
 */
 
-//Route::get('/', function () {
-    //return view('welcome');
-//});
-
+//font-end-router
 Route::get('/', [ProductController::class, 'index']);  
 Route::get('cart', [ProductController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
 
+//back-end-router
 Route::resource('backend', DashboardController::class);
+Route::resource('backend-products', ProductsController::class);
+Route::resource('backend-report', ReportController::class);
