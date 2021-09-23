@@ -70,6 +70,9 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="col-sm-6 mt-3">
+                    {{ $products->links('pagination::bootstrap-4') }}
+                </div>
             </div>
         </div>
         <!-- /.card -->

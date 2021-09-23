@@ -16,6 +16,9 @@
         </div>
     </div>
     @endforeach
+    <div class="col-xs-18 col-sm-6 col-md-3">
+        {{ $products->links('pagination::bootstrap-4') }}
+    </div>
 </div>
 
 @endsection
