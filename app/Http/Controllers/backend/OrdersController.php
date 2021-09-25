@@ -4,9 +4,9 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Product;
+use App\Models\Orders;
 
-class ProductsController extends Controller
+class OrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(10);
-        return view('backend.products.index', compact('products'));
+        $orders = Orders::paginate(10);
+        return view('backend.orders.index', compact('orders'));
     }
 
     /**
@@ -26,8 +26,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        
-        return view('backend.products.create');
+        //
     }
 
     /**
@@ -38,17 +37,7 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'image' => 'required',
-            'price' => 'required',
-        ]);
-
-        Product::create($request->all());
-
-        return redirect()->route('backend-products.index')
-            ->with('success', 'Product created successfully!');
+        //
     }
 
     /**
@@ -59,8 +48,8 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        $products = Product::findOrFail($id);
-        return view('backend.products.show', compact('products'));
+        $order = Orders::findOrFail($id);
+        return view('backend.orders.show', compact('order'));
     }
 
     /**
@@ -71,8 +60,7 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $products = Product::findOrFail($id);
-        return view('backend.products.edit', compact('products'));
+        //
     }
 
     /**
@@ -84,17 +72,7 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'image' => 'required',
-            'price' => 'required',
-        ]);
-
-        Product::findOrFail($id)->update($request->all());
-
-        return redirect()->route('backend-products.index')
-            ->with('success', 'Product updated successfully!');
+        //
     }
 
     /**
@@ -105,9 +83,9 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        Product::findOrFail($id)->delete();
+        Orders::findOrFail($id)->delete();
 
-        return redirect()->route('backend-products.index')
-            ->with('success','Product deleted successfully');
+        return redirect()->route('backend-orders.index')
+            ->with('success','Orders deleted successfully');
     }
 }

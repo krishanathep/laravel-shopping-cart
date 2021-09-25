@@ -19,9 +19,11 @@
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">Shopping</a>
             <ul class="navbar-nav ml-auto">
+                <!--
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/') }}">Products</a>
                 </li>
+                -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('cart') }}">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>

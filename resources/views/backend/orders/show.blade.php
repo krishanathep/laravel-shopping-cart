@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Show Products</h1>
+                        <h1>Show Orders</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Show Products Page</li>
+                            <li class="breadcrumb-item active">Show Orders Page</li>
                         </ol>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">SHOW PRODUCT</h3>
+                <h3 class="card-title">SHOW ORDER</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -36,27 +36,27 @@
                 <table class="table table-bordered">
                     <tr>
                         <td>ID</td>
-                        <td>{{ $products->id }}</td>
-                    </tr>
-                    <tr>
-                        <td>Image</td>
-                        <td><img src="{{ $products->image }}" alt="" width="100"></td>
+                        <td>{{ $order->id }}</td>
                     </tr>
                     <tr>
                         <td>Name</td>
-                        <td>{{ $products->name }}</td>
+                        <td>{{ $order->name }}</td>
                     </tr>
                     <tr>
-                        <td>Description</td>
-                        <td>{{ $products->description }}</td>
+                        <td>Email</td>
+                        <td>{{ $order->email }}</td>
                     </tr>
                     <tr>
-                        <td>Price</td>
-                        <td>{{ $products->price }}</td>
+                        <td>Total</td>
+                        <td>{{ $order->total }}</td>
+                    </tr>
+                    <tr>
+                        <td>Create at</td>
+                        <td>{{ $order->created_at }}</td>
                     </tr>
                 </table>
                 <div class="float-right">
-                    <a href="{{ route('backend-products.index') }}" class="btn btn-secondary mt-2">Cancel</a>
+                    <a href="{{ route('backend-orders.index') }}" class="btn btn-secondary mt-2">Cancel</a>
                 </div>
             </div>
         </div>

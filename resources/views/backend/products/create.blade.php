@@ -48,34 +48,36 @@
                 <form action="{{ route('backend-products.store') }}" method='POST'>
                     @csrf
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Name : </strong>
-                                <input type="text" name='name' class="form-control" placeholder='Enter product name...'>
+                        <div class="col-md-12">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Name : </strong>
+                                    <input type="text" name='name' class="form-control" placeholder='Enter product name...'>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Decription : </strong>
-                                <input type="text" name='description' class="form-control"
-                                    placeholder='Enter product detail...'>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Decription : </strong>
+                                    <input type="text" name='description' class="form-control"
+                                        placeholder='Enter product detail...'>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Image : </strong>
-                                <input type="text" name='image' class="form-control" placeholder='Enter product image...'>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Image : </strong>
+                                    <input type="text" name='image' class="form-control" placeholder='Enter product image...'>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Price : </strong>
-                                <input type="text" name='price' class="form-control" placeholder='Enter product price...'>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Price : </strong>
+                                    <input type="text" name='price' class="form-control" placeholder='Enter product price...'>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <button type='submit' class='btn btn-primary'>Submit</button>
-                            <a href="{{ route('backend-products.index') }}" class="btn btn-secondary">Cancel</a>
+                            <div class="float-right">
+                                <button type='submit' class='btn btn-primary'>Submit</button>
+                                <a href="{{ route('backend-products.index') }}" class="btn btn-secondary">Cancel</a>
+                            </div>
                         </div>
                     </div>
                 </form>

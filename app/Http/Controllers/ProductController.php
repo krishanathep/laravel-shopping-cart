@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Orders;
 
 class ProductController extends Controller
 {
@@ -18,6 +19,22 @@ class ProductController extends Controller
     public function cart()
     {
         return view('cart');
+    }
+
+    // save order in db
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email'=> 'required',
+            'total'=> 'required',
+        ]);
+
+        Orders::create($request->all()); 
+
+        $request->session()->flush();
+
+        return redirect('/')->with('success', 'Product is order to successfully!');
     }
 
     // add product to cart
