@@ -40,6 +40,7 @@
                 </div>
             </div>
             <div class="card-body">
+                <a href="{{ route('backend-orders.create') }}" class="btn btn-success mb-2 float-right"><i class="fas fa-plus"></i> Create</a>
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr align="center">
@@ -62,6 +63,7 @@
                               <td>
                                 <form action="{{ route('backend-orders.destroy', $item->id) }}" method="POST">
                                   <a href="{{ route('backend-orders.show', $item->id) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>
+                                  <a href="{{ route('backend-orders.edit', $item->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                                   @csrf 
                                   @method('DELETE')
                                   <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure to delete?')"><i class="fas fa-trash-alt"></i></button>

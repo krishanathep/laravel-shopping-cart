@@ -26,7 +26,7 @@ class OrdersController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.orders.create');
     }
 
     /**
@@ -37,7 +37,16 @@ class OrdersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'total' => 'required',
+        ]);
+
+        Orders::create($request->all());
+
+        return redirect()->route('backend-orders.index')
+            ->with('success', 'Orders created successfully!');
     }
 
     /**
@@ -60,7 +69,8 @@ class OrdersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order = Orders::findOrFail($id);
+        return view('backend.orders.edit', compact('order'));
     }
 
     /**
@@ -72,7 +82,16 @@ class OrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'total' => 'required',
+        ]);
+
+        Orders::findOrFail($id)->update($request->all());
+
+        return redirect()->route('backend-orders.index')
+            ->with('success', 'Orders updated successfully!');
     }
 
     /**

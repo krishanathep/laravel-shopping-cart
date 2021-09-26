@@ -28,7 +28,7 @@ Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('r
 
 
 //back-end-router
-Route::resource('backend', DashboardController::class);
+Route::resource('backend-dashboard', DashboardController::class);
 Route::resource('backend-products', ProductsController::class);
 Route::resource('backend-orders', OrdersController::class);
 Route::resource('backend-report', ReportController::class);

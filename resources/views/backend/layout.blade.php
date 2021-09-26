@@ -2,18 +2,34 @@
 <html>
 <head>
     <title>Laravel Add To Cart Function - ItSolutionStuff.com</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/7759465487.js" crossorigin="anonymous"></script>
+    
+    <link
+		rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+		integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+		crossorigin="anonymous"
+	/>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!-- Theme style -->
+	<link rel="stylesheet" href="{{ asset('backend/dist/css/adminlte.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('backend/dist/css/clean-switch.css') }}">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- jQuery -->
+	<script src="{{ asset('backend/plugins/jquery/jquery.min.js') }}"></script>
 
-    <!--adminlte-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+	<link rel="stylesheet" href="{{ asset('backend/dist/js/jquery-ui-1.12.1/jquery-ui.min.css') }}" />
+	<script src="{{ asset('backend/dist/js/jquery-ui-1.12.1/jquery-ui.min.js') }}"></script>
+
+	<script src="{{ asset('backend/dist/js/sweetalert2@11.js') }}"></script>
+	<script src="{{ asset('backend/dist/js/jspdf.min.js') }}"></script>
+	<script src="{{ asset('backend/dist/js/printThis.js') }}"></script>
+
+	<!-- Custom -->
+	<link rel="stylesheet" href="{{ asset('backend/dist/css/custom.css') }}">
+	<script src="{{ asset('backend/dist/js/custom.js') }}"></script>
+
+  @yield('third_party_stylesheets')
+
+	@stack('page_css')
 </head>
 <body>
 <!-- Site wrapper -->
@@ -38,7 +54,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="{{ route('backend.index') }}" class="brand-link">
+      <a href="{{ route('backend-dashboard.index') }}" class="brand-link">
         <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">AdminLTE 3</span>
       </a>
@@ -52,7 +68,7 @@
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
                  <li class="nav-item">
-                  <a href="{{ route('backend.index') }}" class="nav-link">
+                  <a href="{{ route('backend-dashboard.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                       Dashboard
@@ -119,5 +135,19 @@
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
+ <!-- Bootstrap 4 -->
+<script src="{{ asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('backend/dist/js/adminlte.min.js') }}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ asset('backend/dist/js/demo.js') }}"></script>
+
+<script>
+	ColorModeInit();
+</script>
+
+@yield('third_party_scripts')
+
+@stack('page_scripts')
 </body>
 </html>
