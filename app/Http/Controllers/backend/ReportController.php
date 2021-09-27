@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Orders;
 
 class ReportController extends Controller
 {
@@ -14,7 +15,9 @@ class ReportController extends Controller
      */
     public function index()
     {
-        return view('backend.report.index');
+        $orders = Orders::all();
+
+        return view('backend.report.index', compact('orders'));
     }
 
     /**

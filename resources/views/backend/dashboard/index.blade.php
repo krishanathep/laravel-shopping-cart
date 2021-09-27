@@ -18,26 +18,49 @@
                 </div>
             </div><!-- /.container-fluid -->
         </section>
-
-        <!-- Default box -->
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Title</h3>
-
-                <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                        <i class="fas fa-times"></i>
-                    </button>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="info-box">
+                    <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-shopping-cart"></i></span>
+    
+                    <div class="info-box-content">
+                        <span class="info-box-text">PRODUCTS</span>
+                        <span class="info-box-number">
+                            {{ $products }}
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
                 </div>
+                <!-- /.info-box -->
             </div>
-            <div class="card-body">
-                Start creating your amazing application!
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="info-box">
+                    <span class="info-box-icon bg-info elevation-1"><i class="far fa-credit-card"></i></span>
+    
+                    <div class="info-box-content">
+                        <span class="info-box-text">ORDERS</span>
+                        <span class="info-box-number">
+                            {{ $orders }}
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="info-box">
+                    <span class="info-box-icon bg-success elevation-1"><i class="fab fa-product-hunt"></i></span>
+    
+                    <div class="info-box-content">
+                        <span class="info-box-text">Total</span>
+                        <span class="info-box-number">
+                            {{ $total }} ฿
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
             </div>
         </div>
-        <!-- /.card -->
-    </div>
 
-@endsection
+    @endsection

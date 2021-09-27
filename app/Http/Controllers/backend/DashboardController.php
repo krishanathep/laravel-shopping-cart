@@ -4,6 +4,8 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Orders;
 
 class DashboardController extends Controller
 {
@@ -14,7 +16,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('backend.dashboard.index');
+        $products = Product::count();
+        $orders = Orders::count();
+        $total = Orders::sum('total');
+
+        //dd($total);
+        return view('backend.dashboard.index', compact('products', 'orders', 'total'));
     }
 
     /**
