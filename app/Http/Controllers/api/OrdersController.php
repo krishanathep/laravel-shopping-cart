@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\backend;
+namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Orders;
 
-class ReportController extends Controller
+class OrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,8 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $month = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
         $orders = Orders::all();
-        //dd($orders);
-        
-        return view('backend.report.index', compact('orders', 'month'));
+        return response()->json($orders);
     }
 
     /**

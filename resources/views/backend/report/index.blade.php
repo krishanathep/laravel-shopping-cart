@@ -180,6 +180,9 @@
           
           const totals = [20000, 30000, 50000, 50000, 60000, 80000, 80000]
 
+          fetch('http://127.0.0.1:8000/api/orders')
+            .then(response => response.json())
+            .then(data => console.log(data));
 
           var areaChartData = {
             labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
